@@ -82,13 +82,19 @@ figcaption {
   top: 20%;
 }
 
+.duration {
+  margin-right: 10px;
+}
+
 input[type="range"] {
   margin: 0;
+  margin-right: 10px;
 }
 
 svg {
   width: 22px;
   height: 16px;
+  margin-right: 10px;
 }
 
 path {

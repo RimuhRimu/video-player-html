@@ -3,17 +3,19 @@ const supportsVideo = !!$.createElement("video").canPlayType
 
 if (supportsVideo) {
   const video = $.getElementById("video")
+  console.log(video.duration)
   video.controls = false
   const container = $.querySelector("figure")
 
   // controls and title
   const title = $.getElementById("caption")
   const playpause = $.getElementById("playpause")
-  const progress = $.getElementById("progress")
-  const volume = $.getElementById("volume")
-  const volSlider = $.getElementById("volSlider")
-  video.volume = volSlider.value/100
   const controls = $.getElementById("controls")
+  const progress = $.getElementById("progress")
+  const duration = $.getElementById("duration")
+  const volSlider = $.getElementById("volSlider")
+  const volume = $.getElementById("volume")
+  video.volume = volSlider.value/100
 
   //fullscreen support checking
   const fullscreen = $.getElementById("fullscreen")
@@ -41,9 +43,6 @@ if (supportsVideo) {
   }
 
   playpause.addEventListener("click",triggerPlayPause)
-  playpause.addEventListener("keyup",(e) => {
-    console.log(e)
-  })
 
   //raise and decrease volume logic
   volume.addEventListener("click", () => {
@@ -63,8 +62,12 @@ if (supportsVideo) {
     video.volume = volSlider.value/100
   })
 
-  //update progress bar
+  //update progress bar and duration
   video.addEventListener("loadedmetadata", () => {
+    const minutes = Math.floor(video.duration/60)
+    const seconds = Math.floor(video.duration)-minutes*60
+    duration.textContent = `${minutes > 9 ? minutes : `0${minutes}`}:${seconds > 9 ? seconds : `${seconds}0`}`
+    console.log(minutes,seconds)
     progress.setAttribute("max", video.duration)
   })
 
@@ -83,8 +86,7 @@ if (supportsVideo) {
     }, 4000);
   }
 
-  video.addEventListener("mouseover", hideUnhide)
-  video.addEventListener("click", hideUnhide)
+  video.addEventListener("focus", hideUnhide)
 
   progress.addEventListener("click", (event) => {
     let rect = progress.getBoundingClientRect()
