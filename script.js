@@ -3,7 +3,6 @@ const supportsVideo = !!$.createElement("video").canPlayType
 
 if (supportsVideo) {
   const video = $.getElementById("video")
-  console.log(video.duration)
   video.controls = false
   const container = $.querySelector("figure")
 
