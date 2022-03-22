@@ -108,9 +108,9 @@ path {
   transition: .5s all ease-in;
 }
 
-#playpause:focus,
-#volume:focus,
-#fullscreen:focus {
+#playpause:focus,#playpause:hover
+#volume:focus,#volume:hover
+#fullscreen:focus,#fullscreen:hover {
   border: 1px solid #afafff;
   background-color: #afafff;
   border-radius: 5px;
