@@ -94,11 +94,26 @@ input[type="range"] {
 svg {
   width: 22px;
   height: 16px;
-  margin-right: 10px;
 }
 
 path {
   fill: white;
+}
+
+#playpause,
+#volume,
+#fullscreen {
+  margin-right: 8px;
+  width: 100%;
+  transition: .5s all ease-in;
+}
+
+#playpause:focus,
+#volume:focus,
+#fullscreen:focus {
+  border: 1px solid #afafff;
+  background-color: #afafff;
+  border-radius: 5px;
 }
 
 /* progress bar */

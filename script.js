@@ -7,6 +7,7 @@ if (supportsVideo) {
 
   const title = $.getElementById("title")
   const controls = $.getElementById("controls")
+  
   //hidding controls when mouse is no moving
   const hideUnhide = () => {
     controls.style.opacity = "100%"
@@ -117,8 +118,7 @@ if (supportsVideo) {
     })
   })
 
-
-  //fullscreen logic, also check if fullscreen is supported
+    //fullscreen logic, also check if fullscreen is supported
   const container = $.querySelector("figure")
   const fullscreen = $.getElementById("fullscreen")
   const fullscreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen)
