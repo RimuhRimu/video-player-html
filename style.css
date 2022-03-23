@@ -3,8 +3,6 @@
 */
 :root {
   --blue:#3C91E6;
-  --green:#9FD356;
-  --black:#342E37;
   --black-bg:#1f1f1f;
   --white:#FAFFFD;
   --tomato:#FF674D;
@@ -17,7 +15,7 @@ body {
   margin: 0;
 }
 
-section {
+.container {
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -25,7 +23,7 @@ section {
   justify-content: center;
 }
 
-figure {
+.videoLayout {
   position: relative;
   margin: 0;
   display: flex;
@@ -61,15 +59,12 @@ figcaption {
   justify-content: center;
 }
 
-.buttons {
+.playpause {
+  font-size: 1em;
   font-size: 1.5em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.playpause {
-  font-size: 1em;
 }
 
 .rightControls {
@@ -103,16 +98,14 @@ path {
 #playpause,
 #volume,
 #fullscreen {
-  margin-right: 8px;
-  width: 100%;
   transition: .5s all ease-in;
 }
 
-#playpause:focus,#playpause:hover
-#volume:focus,#volume:hover
+#playpause:focus,#playpause:hover,
+#volume:focus,#volume:hover,
 #fullscreen:focus,#fullscreen:hover {
-  border: 1px solid #afafff;
-  background-color: #afafff;
+  border: 1px solid var(--white);
+  background-color: var(--tomato);
   border-radius: 5px;
 }
 
@@ -133,7 +126,7 @@ progress {
   border-radius: 10px;
 }
 
-/* animation effects */
+/* animation effect */
 
 figcaption,
 .bar,

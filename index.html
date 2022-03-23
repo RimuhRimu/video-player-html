@@ -2,53 +2,60 @@
 <html lang="en">
   <head>
     <title>Video media player</title>
-    <link href="style.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/80619f9a2e.js" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/80619f9a2e.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <section id="container">
-      <figure>
-
-        <!-- title -->
+    <section class="container" id="container">
+      <figure class="videoLayout">
         <figcaption id="title">Video player</figcaption>
-
-        <!-- control bar -->
-        <div class="controls" id="controls">
-            <div class="bar" id="bar" role="menubar">
-              <div class="buttons" id="buttons">
-                <div id="playpause" tabindex="0" role="button">
-                  <i class="fa-solid fa-play playpause"></i>
-                </div>
-              </div>
-              <div class="rightControls" id="rightControls">
-                <span class="currentDuration" id="currentDuration">00:00</span>/
-                <span class="duration" id="duration">00:00</span>
-                <input type="range" name="volume" id="volSlider" min="0" max="100" role="slider" aria-label="volume"></input>
-                <div id="volume" tabindex="0" role="button">
-                  <i class="fa-solid fa-volume-high"></i>
-                </div>
-                <div id="fullscreen" tabindex="0" role="button">
-                  <i class="fa-solid fa-expand"></i>
-                </div>
-              </div>
-            <progress id="progress" min="0" value="0" role="progressbar"></progress>
-          </div>
-        </div>
-
-          <span id="loader" class="loader" style="display: none;">
+        
+        <!-- loader -->
+          <span class="loader" id="loader">
             <span class="loaderInner">
             </span>
           </span>
-
-          <!-- video -->
-          <video id="video" tabindex="0">
-            <source src="https://ia600300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" type="video/mp4">
-          </video>
-
+        <!---->
+        
+        <!-- control bar -->
+        <div class="controls" id="controls">
+            <div class="bar" id="bar" role="menubar">
+              
+              <!-- play or pause icon -->
+              <div id="playpause" tabindex="0" role="button">
+                <i class="fa-solid fa-play playpause icon"></i>
+              </div>
+              <!--  -->
+            
+            <!-- progress bar -->
+            <progress id="progress" min="0" value="0" role="progressbar"></progress>
+            <!--  -->
+            
+            <!-- right controls -->
+            <div class="rightControls" id="rightControls">
+              <div class="durationBox">
+                <span class="currentDuration" id="currentDuration">00:00</span>/
+                <span class="duration" id="duration">00:00</span>
+              </div>
+              <input type="range" name="volume" id="volSlider" min="0" max="100" role="slider" aria-label="volume"></input>
+              <div id="volume" tabindex="0" role="button">
+                <i class="fa-solid fa-volume-high icon"></i>
+              </div>
+              <div id="fullscreen" tabindex="0" role="button">
+                <i class="fa-solid fa-expand icon"></i>
+              </div>
+            </div>
+            <!--  -->
+            
+          </div>
+        </div>
+        <!--  -->
+        
+        <video id="video" tabindex="0" src="https://ia600300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"></video>
       </figure>
     </section>
   </body>
-  <script src="script.js"></script>
+	<script src="script.js"></script>
 </html>
